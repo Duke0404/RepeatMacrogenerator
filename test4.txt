@@ -1,0 +1,6 @@
+# Testing non-numeric variable definitions and non-numeric expression values
+.DEF wrong_var isThisHowYouDefineVariables .ENDM
+
+.REPT 3*wrong_var
+whatAmIDoingWithMyLife
+.ENDM

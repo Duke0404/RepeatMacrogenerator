@@ -1,0 +1,16 @@
+# Testing extra .REPTstatements
+
+.DEF A1 1 .ENDM
+.REPT 2/2+2+A1
+level 1
+
+.REPT 2
+level 2
+.ENDM
+
+level 1a
+
+.REPT A1+B_2-1^2
+level 1b
+
+level 1c

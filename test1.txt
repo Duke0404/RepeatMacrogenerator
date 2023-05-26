@@ -1,0 +1,4 @@
+# Testing basic definition & repeat with expression
+.DEF num_1 4 .ENDM
+.DEF num_2 2 .ENDM
+.REPT num_1*num_2 testing test | .ENDM

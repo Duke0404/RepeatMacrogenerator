@@ -1,0 +1,7 @@
+# Testing extra .ENDMstatements
+.ENDM
+
+.REPT 3
+freeWillIsALie.ENDM
+
+.ENDM

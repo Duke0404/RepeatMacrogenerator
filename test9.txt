@@ -1,0 +1,6 @@
+# Testing negative and zero equivalent expressions
+
+.REPT 2-9
+.REPT 5/6*3*0 invisible text .ENDM
+footer
+.ENDM

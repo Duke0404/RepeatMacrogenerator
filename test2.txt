@@ -1,0 +1,13 @@
+# Testing definitions and repeat operations with a variety of whitespace delimiters
+.DEF
+num_1
+2
+.ENDM
+
+.DEF	num_2	2	.ENDM
+
+.REPT num_1*num_2
+Vertically
+	Shifted text
+
+.ENDM

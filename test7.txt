@@ -1,0 +1,11 @@
+# Testing free text similar to macro definitions
+
+.DEF num_right 4 .ENDM
+.DEF num_wrong la 5 .ENDM
+.DEF num_wrong2 6 la .ENDM
+
+.REPT num_right
+	.REPTnum_wrong
+	\REPT is not a macro
+
+	.REPT num_right+1 text .ENDM.ENDM

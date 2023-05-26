@@ -1,0 +1,2 @@
+# Testing incorrectly defined expression
+.REPT 2347+-243.2 singleLife .ENDM

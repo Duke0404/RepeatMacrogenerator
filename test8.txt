@@ -1,0 +1,3 @@
+# Testing incorrect variable details
+.DEF 1_var 70 .ENDM
+.REPT 1_var 70 .ENDM

@@ -1,0 +1,15 @@
+# Testing nested repeats and variable redefinitions
+.DEF num_1 3 .ENDM
+Before
+.REPT
+2
+text1
+.REPT num_1
+.DEF num_1 4 .ENDM
+text2
+.REPT num_1
+text3
+.ENDM
+.ENDM
+.ENDM
+After
