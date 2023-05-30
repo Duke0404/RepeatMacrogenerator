@@ -1,17 +1,35 @@
 import re
+import os
 
-INPUT_FILE = "test1.txt"
-# INPUT_FILE = "test2.txt"
-# INPUT_FILE = "test3.txt"
-# INPUT_FILE = "test4.txt"
-# INPUT_FILE = "test5.txt"
-# INPUT_FILE = "test6.txt"
-# INPUT_FILE = "test7.txt"
-# INPUT_FILE = "test8.txt"
-# INPUT_FILE = "test9.txt"
-# INPUT_FILE = "test10.txt"
-# INPUT_FILE = "test11.txt"
-OUTPUT_FILE = "output.txt"
+# input_file = "test1.txt"
+# input_file = "test2.txt"
+# input_file = "test3.txt"
+# input_file = "test4.txt"
+# input_file = "test5.txt"
+# input_file = "test6.txt"
+# input_file = "test7.txt"
+# input_file = "test8.txt"
+# input_file = "test9.txt"
+# input_file = "test10.txt"
+# input_file = "test11.txt"
+# output_file = "output.txt"
+
+input_file = ""
+while os.path.isfile(input_file) is False:
+    input_file = input("Enter input filename: ")
+
+    if os.path.isfile(input_file) is False:
+        print("Error: Input file does not exist.")
+
+output_file = ""
+while output_file == "" or output_file == input_file or "/" in output_file:
+    output_file = input("Enter output filename: ")
+
+    if output_file == "" or output_file == input_file or "/" in output_file:
+        print("Error: Invalid output filename.")
+
+if os.path.isfile(output_file):
+    print("Warning: Output file already exists. Overwriting.")
 
 PRIMARY_REGEX = re.compile(r"\.DEF\s\S+\s\S+\s\.ENDM|\.REPT\s\S+\s|.ENDM")
 NUMBER_REGEX = re.compile(r"-?\d+\.?\d*")
@@ -102,7 +120,7 @@ def expression_handler(expression: str):
     return int(result)
 
 
-with open(INPUT_FILE, "r") as in_file:
+with open(input_file, "r") as in_file:
     input = in_file.read()
 
 while len(input) > 0:
@@ -143,5 +161,5 @@ while len(rept_stack) > 1:
     last = rept_stack.pop()
     rept_stack[len(rept_stack) - 1]["txt"] += last["txt"] * last["exp"]
 
-with open(OUTPUT_FILE, "w") as out_file:
+with open(output_file, "w") as out_file:
     out_file.write(rept_stack[0]["txt"])
