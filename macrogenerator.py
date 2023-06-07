@@ -31,7 +31,7 @@ while output_file == "" or output_file == input_file or "/" in output_file:
 if os.path.isfile(output_file):
     print("Warning: Output file already exists. Overwriting.")
 
-PRIMARY_REGEX = re.compile(r"\.DEF\s\S+\s\S+\s\.ENDM|\.REPT\s\S+\s|.ENDM")
+PRIMARY_REGEX = re.compile(r"\.DEF\s\S+\s\S+\s\.ENDM|\.REPT\s\S+\s|\.ENDM")
 NUMBER_REGEX = re.compile(r"-?\d+\.?\d*")
 
 input: str = ""
